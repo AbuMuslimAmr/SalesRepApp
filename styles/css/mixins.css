@@ -1,0 +1,6 @@
+.clickable:hover {
+  cursor: pointer;
+}
+.scrollable {
+  overflow-y: scroll;
+}

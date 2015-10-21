@@ -1,0 +1,33 @@
+.login-logo {
+  margin-top: 100px;
+  margin-left: auto;
+}
+body.login {
+  background: url('../../media/img/calendar.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset;
+}
+.login-form {
+  padding: 18px;
+  padding-bottom: 25px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: black 0px 0px 1px;
+  margin: 20vh 0 10vh 0;
+}
+.login-form input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+.login-form input.ng-valid {
+  border: 1px solid #2eac22;
+}
+.login-form .logo {
+  background: url('../../media/img/logo-black.png') no-repeat;
+  background-size: contain;
+  height: 40px;
+  margin-bottom: 35px;
+}

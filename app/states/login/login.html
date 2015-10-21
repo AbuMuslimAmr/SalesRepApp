@@ -1,0 +1,49 @@
+<!-- login form -->
+<div class="container-fluid login-page" ng-controller="LoginCtrl">
+  <div class="row">
+    <div class="col-xs-offset-1 col-xs-10 col-md-offset-4 col-md-4">
+      <div class="container-fluid no-padding">
+
+        <!-- Login Form -->
+        <div class="row">
+          <form novalidate class="login-form" name="loginForm" novalidate>
+
+            <!-- Welcome and Logo -->
+            <div class="form-group">
+              <div class="logo"></div>
+            </div>
+
+            <!-- Responses -->
+            <div class="form-group">
+              <div class="alert alert-danger" ng-show="errorMessage"><i class="fa fa-times"></i> {{errorMessage}}</div>
+              <div class="alert alert-success" ng-show="successMessage"><i class="fa fa-check"></i> {{successMessage}}</div>
+            </div>
+
+            <!-- Username -->
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-addon">
+                  <i class="fa fa-user" ng-class="{'text-success': loginForm.username.$valid}"></i>
+                </div>
+                <input name="username" type="text" class="form-control" id="username" placeholder="Username" ng-model="user.name" required />
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-addon">
+                  <i class="fa fa-lock" ng-class="{'text-success': loginForm.password.$valid}"></i>
+                </div>
+                <input name="password" type="password" class="form-control" id="password" placeholder="Password" ng-model="user.password" required />
+              </div>
+            </div>
+
+            <!-- Login button -->
+            <button type="submit" class="btn btn-success btn-block" ng-disabled="loginForm.$invalid" ng-click="login()">Log in</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

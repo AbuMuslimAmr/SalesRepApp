@@ -1,0 +1,45 @@
+<!-- notes tab view -->
+
+<!-- tabs header -->
+<div class="row page-title">
+  <div class="col-xs-12">
+
+    <!-- notes tab -->
+    <span class="lead tab active">
+      <i class="fa fa-comment-o"></i> Notes
+    </span>
+
+    <!-- visits tab -->
+    <span class="lead tab" ui-sref="workspace.customer-details.visits">
+      <i class="fa fa-calendar"></i> Visits
+    </span>
+  </div>
+</div>
+
+<!-- notes tab content -->
+<div class="panel customer-details">
+  <div class="panel-body form-horizontal">
+    <form id="notesForm" name="notesForm">
+
+      <!-- notes text area -->
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Notes</label>
+        <div class="col-sm-8">
+          <textarea name="notes" class="form-control" ng-model="customer.notes"></textarea>
+        </div>
+      </div>
+
+      <!-- status select box -->
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Status</label>
+        <div class="col-sm-8">
+          <select
+              ng-model="selectedStatus"
+              ng-options="status as status.name for status in customerStatus"
+              class="form-control"
+              ng-change="setSelectedStatus(selectedStatus)"></select>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

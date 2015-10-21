@@ -1,0 +1,16 @@
+.clickable:hover {
+  cursor: pointer;
+}
+.scrollable {
+  overflow-y: scroll;
+}
+body {
+  background-color: #f5f5f5;
+}
+.main-content {
+  padding: 80px 0;
+}
+/* Fix UI-GRID theme issue */
+.ui-grid-filter-input {
+  color: orange;
+}

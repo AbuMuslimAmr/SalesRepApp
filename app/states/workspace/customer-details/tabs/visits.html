@@ -1,0 +1,63 @@
+<!-- visits tab view -->
+
+<!-- tabs header -->
+<div class="row page-title">
+  <div class="col-xs-12">
+
+    <!-- notes tab -->
+    <span class="lead tab" ui-sref="workspace.customer-details.notes">
+      <i class="fa fa-comment-o"></i> Notes
+    </span>
+
+    <!-- visits tab -->
+    <span class="lead tab active">
+      <i class="fa fa-calendar"></i> Visits
+    </span>
+  </div>
+</div>
+
+<!-- visits tab content -->
+<div class="panel customer-details">
+  <div class="panel-body form-horizontal">
+    <form id="visitsForm" name="visitsForm">
+
+      <!-- date input field -->
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Date</label>
+        <div class="col-sm-8">
+          <input name="date" type="date" value="{{customer.visit.date}}" ng-model="customer.visit.date" class="form-control" required />
+          <span class="text-danger" ng-show="visitsForm.date.$error.required && visitsSubmitted">* date is required</span>
+        </div>
+      </div>
+
+      <!-- time input field -->
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Time</label>
+        <div class="col-sm-8">
+          <input name="time" type="time" value="{{customer.visit.time}}" ng-model="customer.visit.time" class="form-control" required />
+          <span class="text-danger" ng-show="visitsForm.time.$error.required && visitsSubmitted">* time is required</span>
+        </div>
+      </div>
+
+      <!-- notes text area -->
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Notes</label>
+        <div class="col-sm-8">
+          <textarea ng-model="customer.visit.notes" class="form-control"></textarea>
+        </div>
+      </div>
+
+      <!-- actions selectbox -->
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Action</label>
+        <div class="col-sm-8">
+          <select
+              ng-model="selectedAction"
+              ng-options="action as action.name for action in customerActions"
+              class="form-control"
+              ng-change="setSelectedAction(selectedAction)"></select>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

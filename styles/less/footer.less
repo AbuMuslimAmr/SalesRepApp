@@ -1,0 +1,30 @@
+@import "theme";
+@import "mixins";
+
+.footer {
+  background-color: @header-background;
+  height: 60px;
+  font-size: 15px;
+  font-weight: bold;
+  color: @header-color;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding-top: 15px;
+  z-index: 100;
+
+  button {
+    margin-left: 10px;
+  }
+
+  .toggle-btn {
+    background-color: @header-color;
+    color: black;
+
+    &:hover, &:focus {
+      background-color: @orange;
+      color: @white;
+    }
+  }
+}

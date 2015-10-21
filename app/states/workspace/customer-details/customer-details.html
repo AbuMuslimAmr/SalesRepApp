@@ -1,0 +1,133 @@
+<!-- customers details view -->
+<div class="container-fluid" ng-controller="CustomerDetailsCtrl">
+
+  <!-- Page header -->
+  <div class="row page-title">
+    <div class="col-xs-10 col-xs-offset-1">
+
+      <!-- header, and selected customer name -->
+      <span class="lead">
+        <i class="fa fa-list"></i> Customer Details: <span class="bg-info">{{customer.customername}}</span>
+      </span>
+
+      <!-- back btn returns to customers list page -->
+      <button class="btn btn-default pull-right" ui-sref="workspace.customers">
+        <i class="fa fa-mail-reply"></i> Back
+      </button>
+    </div>
+  </div>
+
+  <!-- error and success message -->
+  <div class="row" ng-show="!loading && (errorMessage || successMessage)">
+    <div class="col-xs-10 col-xs-offset-1">
+      <div class="alert alert-danger" ng-show="errorMessage"><i class="fa fa-times"></i> {{errorMessage}}</div>
+      <div class="alert alert-success" ng-show="successMessage"><i class="fa fa-check"></i> {{successMessage}}</div>
+    </div>
+  </div>
+
+  <!-- customer details -->
+  <div class="row" ng-show="!loading && !errorMessage">
+    <div class="col-xs-10 col-xs-offset-1">
+      <div class="panel customer-details">
+        <div class="panel-body form-horizontal">
+
+          <!-- customer id -->
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Customer ID</label>
+            <div class="col-sm-10">
+              <p class="form-control-static">{{customer.id}}</p>
+            </div>
+          </div>
+
+          <!-- customer name -->
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Customer Name</label>
+            <div class="col-sm-10">
+              <p class="form-control-static">{{customer.customername}}</p>
+            </div>
+          </div>
+
+          <!-- product name -->
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Product Name</label>
+            <div class="col-sm-10">
+              <p class="form-control-static">{{customer.productname}}</p>
+            </div>
+          </div>
+
+          <!-- status -->
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Status</label>
+            <div class="col-sm-10">
+              <p class="form-control-static">{{customer.status}}</p>
+            </div>
+          </div>
+
+          <!-- communications list -->
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Communications</label>
+            <div class="col-sm-10">
+              <p class="form-control-static">
+                <span ng-repeat="method in customer.communications" class="tag" ng-hide="method.category === 'Phone' && !$root.bowser.mobile">
+
+                  <!-- Email -->
+                  <a href="mailto:{{method.value}}" ng-if="method.category === 'Email'">
+                    <strong>{{'[' + method.category + ' | ' + method.type + ']'}}</strong> {{method.value}}
+                  </a>
+
+                  <!-- Phone -->
+                  <a href="tel:{{method.value}}" ng-if="method.category === 'Phone'">
+                    <strong>{{'[' + method.category + ' | ' + method.type + ']'}}</strong> {{method.value}}
+                  </a>
+
+                  <!-- Skype -->
+                  <a href="callto:{{method.value}}" ng-if="method.category === 'Skype'">
+                    <strong>{{'[' + method.category + ' | ' + method.type + ']'}}</strong> {{method.value}}
+                  </a>
+                </span>
+              </p>
+            </div>
+          </div>
+
+          <!-- address list -->
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Addresses</label>
+            <div class="col-sm-10">
+              <p class="form-control-static">
+                <span ng-repeat="address in customer.addresses" class="tag">
+                  <strong>{{'[' + address.type + ']'}}</strong>
+                  {{address.street1 + ', ' + address.stree2 + ', ' + address.city + ', ' + address.state + ', ' + address.country}}
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- notes/visits -->
+  <div class="row" ng-show="!loading && !errorMessage">
+    <div class="col-xs-10 col-xs-offset-1">
+      <div ui-view></div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div class="container-fluid footer">
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1">
+        <button type="submit" class="btn btn-default pull-right" ng-click="save()" ng-show="!loading && !errorMessage">
+          <i class="fa fa-save"></i> Save
+        </button>
+
+        <button class="btn btn-info pull-right" ng-click="isCalendarOpen = true">
+          <i class="fa fa-calendar"></i> Calendar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- calendar -->
+  <calendar options="calendar" is-open="isCalendarOpen" events="visits"></calendar>
+</div>

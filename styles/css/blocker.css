@@ -1,0 +1,47 @@
+.clickable:hover {
+  cursor: pointer;
+}
+.scrollable {
+  overflow-y: scroll;
+}
+.blocker {
+  position: fixed;
+  padding-top: 20vh;
+  padding-bottom: 20px;
+  top: -100%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.71);
+  transition: top 500ms ease;
+  overflow-y: scroll;
+}
+.blocker .loading-text {
+  font-size: 40px;
+}
+.blocker.calendar {
+  background-color: #ffffff;
+}
+.blocker.calendar .actions {
+  margin-bottom: 15px;
+}
+.blocker.calendar .actions button {
+  margin-left: 10px;
+}
+.blocker.calendar .actions button.close {
+  color: red;
+  border-radius: 100px;
+  border: 1px solid red;
+  width: 30px;
+  height: 30px;
+  font-weight: 100;
+  opacity: 1;
+}
+.blocker.calendar .actions button.close:hover {
+  color: #ffffff;
+  background-color: red;
+}
+.blocker.open {
+  top: 0;
+}

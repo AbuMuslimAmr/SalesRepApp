@@ -1,0 +1,22 @@
+<!-- calender directive template -->
+<div class="blocker calendar" ng-class="{open: isOpen}">
+  <div class="container-fluid">
+    <div class="row actions">
+      <div class="col-xs-10 col-xs-offset-1">
+        <button class="pull-right close" ng-click="close()">X</button>
+
+        <!-- test calendar btn -->
+        <button class="btn btn-info pull-right" ng-click="testCalendar()">
+          Test Calendar
+        </button>
+      </div>
+    </div>
+
+    <!-- the calender -->
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1">
+        <div ng-show="isOpen" ng-if="eventSources.length" ui-calendar="calendarConfig" ng-model="eventSources"></div>
+      </div>
+    </div>
+  </div>
+</div>

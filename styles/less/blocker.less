@@ -1,0 +1,51 @@
+@import "theme";
+@import "mixins";
+
+.blocker {
+  position: fixed;
+  padding-top: 20vh;
+  padding-bottom: 20px;
+  top: -100%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.71);
+  transition: top 500ms ease;
+  overflow-y: scroll;
+
+  .loading-text {
+    font-size: 40px;
+  }
+
+  &.calendar {
+    background-color: @white;
+
+    .actions {
+      margin-bottom: 15px;
+
+      button {
+        margin-left: 10px;
+
+        &.close {
+          color: @red;
+          border-radius: 100px;
+          border: 1px solid @red;
+          width: 30px;
+          height: 30px;
+          font-weight: 100;
+          opacity: 1;
+
+          &:hover {
+            color: @white;
+            background-color: @red;
+          }
+        }
+      }
+    }
+  }
+
+  &.open {
+    top: 0;
+  }
+}

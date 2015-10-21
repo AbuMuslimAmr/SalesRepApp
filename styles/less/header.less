@@ -1,0 +1,28 @@
+@import "theme";
+@import "mixins";
+
+.header {
+  z-index: 100;
+
+  .navbar {
+    height: 60px;
+    background-color: @header-background;
+
+    .navbar-brand>img {
+      height: 30px;
+    }
+
+    .username {
+      color: #fff;
+      margin-right: 10px;
+    }
+
+    .logout {
+      font-size: 15px;
+      margin-top: 15px;
+      color: @header-color;
+
+      .clickable;
+    }
+  }
+}

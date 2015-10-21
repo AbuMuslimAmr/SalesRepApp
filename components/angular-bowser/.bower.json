@@ -1,0 +1,35 @@
+{
+  "name": "angular-bowser",
+  "version": "0.0.1",
+  "homepage": "https://github.com/jacqueslareau/angular-bowser",
+  "authors": [
+    "Jacques Lareau <jack.lareau@gmail.com>"
+  ],
+  "description": "An AngularJS service to detect client browser and version",
+  "main": "./src/angular-bowser.js",
+  "keywords": [
+    "angular",
+    "bowser"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1"
+  },
+  "_release": "0.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.1",
+    "commit": "569d0b7160beb106270d0b5c8e98a2b1515507e3"
+  },
+  "_source": "git://github.com/jacqueslareau/angular-bowser.git",
+  "_target": "~0.0.1",
+  "_originalSource": "angular-bowser",
+  "_direct": true
+}

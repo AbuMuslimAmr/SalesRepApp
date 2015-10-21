@@ -1,0 +1,28 @@
+.clickable:hover {
+  cursor: pointer;
+}
+.scrollable {
+  overflow-y: scroll;
+}
+.header {
+  z-index: 100;
+}
+.header .navbar {
+  height: 60px;
+  background-color: #37474f;
+}
+.header .navbar .navbar-brand > img {
+  height: 30px;
+}
+.header .navbar .username {
+  color: #fff;
+  margin-right: 10px;
+}
+.header .navbar .logout {
+  font-size: 15px;
+  margin-top: 15px;
+  color: #b0bec5;
+}
+.header .navbar .logout:hover {
+  cursor: pointer;
+}

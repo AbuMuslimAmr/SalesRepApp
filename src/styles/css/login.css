@@ -1,0 +1,29 @@
+.login-logo {
+  margin-top: 100px;
+  margin-left: auto;
+}
+.login-form input {
+  height: 50px;
+  border: none;
+  box-shadow: none;
+  margin-top: 25px;
+}
+.login-form input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+.login-form .fa {
+  position: absolute;
+  right: -35px;
+  top: 294px;
+  font-size: 25px;
+  color: red;
+}
+.login-form .fa.fa-check {
+  color: darkgreen;
+}
+.login-form button {
+  width: 100%;
+  height: 50px;
+  font-weight: bold;
+  margin-top: 10px;
+}

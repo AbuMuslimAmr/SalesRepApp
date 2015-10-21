@@ -1,0 +1,28 @@
+<div class="container-fluid" ng-controller="LoginCtrl">
+  <div class="row">
+    <div class="col-xs-offset-1 col-xs-10 col-md-offset-4 col-md-4">
+      <div class="container-fluid no-padding">
+
+        <!-- Welcome and Logo -->
+        <div class="row">
+          <img class="login-logo" src="media/img/logo.png">
+        </div>
+
+        <!-- Login Form -->
+        <div class="row">
+          <form novalidate class="login-form" name="loginForm">
+            <div class="form-group">
+              <input type="text" class="form-control" id="username" placeholder="user name" ng-model="user.name" required>
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" id="password" placeholder="password" ng-model="user.password" required>
+              <i class="fa fa-check" ng-if="submitted && valid"></i>
+              <i class="fa fa-times" ng-if="submitted && !valid"></i>
+            </div>
+            <button type="submit" class="btn" ng-click="login()">Log in</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

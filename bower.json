@@ -1,0 +1,20 @@
+{
+  "name": "ninja",
+  "version": "0.0.0",
+  "main": "app.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "src/components"
+  ],
+  "dependencies": {
+    "angular": "~1.4.5",
+    "bootstrap": "~3.3.5",
+    "lodash": "~3.10.1",
+    "ui-router": "~0.2.15",
+    "font-awesome": "~4.4.0",
+    "restangular": "~1.5.1",
+    "angular-cookies": "~1.4.6",
+    "angular-ui-grid": "~3.0.6"
+  }
+}

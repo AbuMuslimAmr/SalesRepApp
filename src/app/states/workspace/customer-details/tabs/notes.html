@@ -1,0 +1,11 @@
+
+<textarea>{{customerDetails.notes}}</textarea>
+
+<input type="radio" name="status" ng-checked="customerDetails.status === 'New'"> New
+<input type="radio" name="status" ng-checked="customerDetails.status === 'InProgress'"> InProgress
+<input type="radio" name="status" ng-checked="customerDetails.status === 'OrderPlaced'"> OrderPlaced
+<input type="radio" name="status" ng-checked="customerDetails.status === 'Support'"> Support
+<input type="radio" name="status" ng-checked="customerDetails.status === 'Cancelled'"> Cancelled
+<input type="radio" name="status" ng-checked="customerDetails.status === 'Rejected'"> Rejected
+
+<button ng-click="saveNotes()">Save</button>
